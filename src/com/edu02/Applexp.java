@@ -17,6 +17,7 @@ public class Applexp {
         System.out.print("x = ");
         x = sc.nextDouble();
         //
+        sum = 0;
         for (int i = 0; i <= n; i++) {
             p = 1;
             for (int j = 0; j < i; j++) {
