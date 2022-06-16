@@ -14,7 +14,7 @@ public class ApplList {
 		arrStr[1] = "001";
 		//lstStr.clear(); // Error
 		//lstStr.add("aa"); // Error
-		//lstStr.set(1,"aa");
+		//lstStr.set(2,"aa");
 		System.out.println("Changed lstStr = " + lstStr);
 		//System.out.println("Changed arrStr = " + Arrays.toString(arrStr));
 		//Arrays.sort(arrStr);
@@ -22,17 +22,17 @@ public class ApplList {
 		//lstStr.sort((a,b)->a.compareTo(b));
 		System.out.println("Sorted lstStr = " + lstStr);
 		*/
-		// /*-
+		/*-
 		String[] arrStr = { "222", "1", "1111", "10" };
-		//List<String> lstStr = new ArrayList<>(Arrays.asList(arrStr));
-		List<String> lstStr = new ArrayList<>();
+		List<String> lstStr = new ArrayList<>(Arrays.asList(arrStr));
+		//List<String> lstStr = new ArrayList<>();
 		lstStr.add("0021");
 		lstStr.add("0013");
 		lstStr.add(1,"2222");
 		lstStr.add("001");
 		lstStr.add("1111");
 		lstStr.add("010");
-		System.out.println("Original: lstStr = " + lstStr);
+		System.out.println("Original: lstStr = " + lstStr); // toString()
 		Collections.sort(lstStr);
 		System.out.println("Sorted: lstStr = " + lstStr);
 		System.out.println("Positoin 1: " + lstStr.get(1));
@@ -40,7 +40,7 @@ public class ApplList {
 		System.out.println("Updated: lstStr = " + lstStr);
 		lstStr.clear();
 		System.out.println("stStr.clear() = " + lstStr);
-		// */
+		*/
 		/*-
 		List<Student> lstStr = new ArrayList<>();
 		lstStr.add(new Student(232, "Petro"));
@@ -73,7 +73,7 @@ public class ApplList {
 //		System.out.println("element2 = " + element2);
 		//
 		// Print Elements
-		//System.out.println("elements: " + list);
+//		System.out.println("elements: " + list);
 		//
 //		for (int i = 0; i < list.size(); i++) {
 //			System.out.println("list.get(" + i + ")= " + list.get(i));
@@ -115,7 +115,7 @@ public class ApplList {
 //            }
 //        }
         */
-		/*-
+		// /*-
 		List<String> list = new ArrayList<>();
 		list.add("First element");
 		list.add("Second element");
@@ -149,12 +149,12 @@ public class ApplList {
 		        iterator.remove();
 		    }
 		}
-		*/
-		/*-
+		// */
+		// /*-
 		System.out.println("\nFinal List:");
 		for (String current : list) {
 		    System.out.println(current);
 		}
-		*/
+		// */
 	}
 }
