@@ -83,7 +83,7 @@ public class AppStr {
 		System.out.printf(formatStr, "pi", PI);
 		System.out.printf("hashcode =%h", 64);
 		*/
-		/*-
+		// /*-
 		String s1 = new String("Hello");
 		String s2 = " And Goodbye";
 		String str = s1 + s2;
@@ -91,15 +91,16 @@ public class AppStr {
 		System.out.println("str = " + str);
 		//
 		StringBuilder sb = new StringBuilder(s1);
+		System.out.println("1. sb.capacity() = " + sb.capacity());
 		sb.append(s2);
 		// str = sb.toString();
 		System.out.println(" sb = " + sb); // toString()
 		System.out.println(" sb.length() = " + sb.length());
-		System.out.println(" sb.capacity() = " + sb.capacity());
+		System.out.println("2. sb.capacity() = " + sb.capacity());
 		sb.append("12345");
 		System.out.println("new sb.length() = " + sb.length());
 		System.out.println("new sb.capacity() = " + sb.capacity());
 		System.out.println("Reverse sb = " + sb.reverse());
-		*/
+		// */
 	}
 }
