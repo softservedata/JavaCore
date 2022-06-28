@@ -28,7 +28,7 @@ public class DialogTime extends JFrame {
         //
         buttonTime.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                long ms = System.currentTimeMillis();
+                long ms = System.currentTimeMillis(); // 1.01.1970 0:0:0.0
                 while (System.currentTimeMillis() - ms < 5000) {
                     tOutput.setText(new Long(System.currentTimeMillis()).toString());
                     // System.out.println("Thread ID = " + Thread.currentThread().getId()
