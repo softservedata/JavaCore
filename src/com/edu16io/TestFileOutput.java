@@ -6,13 +6,13 @@ import java.io.IOException;
 
 public class TestFileOutput {
     public static void main(String[] args) {
-        byte[] w = {48, 49, 50};
+        byte[] w = {48, 49, 50}; // 0, 1, 2
         String fileName = "c:/Tools/1/test.txt";
         FileOutputStream outFile;
         try {
             File file = new File(fileName);
             boolean flag = file.canWrite();
-            System.out.println("flag = " + flag);
+            System.out.println("is writable flag = " + flag);
             if (!flag) {
                 file.setWritable(true);
             }

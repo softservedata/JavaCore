@@ -17,7 +17,8 @@ public abstract class ExternalFileReader {
 
     protected ExternalFileReader(String name) {
         this.name = name;
-        this.path = this.getClass().getResource(PATH_SEPARATOR + name).getPath(); // .substring(1);
+        //this.path = this.getClass().getResource(PATH_SEPARATOR + name).getPath(); // .substring(1);
+        this.path = "./" + name;
         System.out.println("this.path = " + this.path);
     }
 

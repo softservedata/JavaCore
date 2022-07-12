@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class TestFileInput {
     public static void main(String[] args) {
-        byte[] r = new byte[1000];
+        byte[] r = new byte[50];
         String fileName = "c:/Tools/1/test.txt";
         FileInputStream inFile;
         try {
