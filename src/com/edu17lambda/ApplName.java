@@ -1,4 +1,4 @@
-package com.softserve.edu17lambda;
+package com.edu17lambda;
 
 import java.util.Scanner;
 
@@ -69,10 +69,12 @@ public class ApplName {
 		//
 		// Java-8. Reference
 		//MyFunctional f1 = app::x2;
+		//MyFunctional f1 = ApplName::x2; // if x2 is static
 		//System.out.println("x2 Integral = " + app.integral(f1, a, b, n));
 		//
 		// Java-8. Add Lambda
 //		MyFunctional f1 = x->x*x;
+		//MyFunctional f1 = (double x)->{return x*x;};
 //		System.out.println("x2 Integral = " + app.integral(f1, a, b, n));
 
 		System.out.println("x2 Integral =  " + app.integral(x -> x * x, a, b, n));
