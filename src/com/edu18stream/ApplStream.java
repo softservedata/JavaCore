@@ -25,7 +25,7 @@ public class ApplStream {
 		System.out.println("Updated: " + filtered);
 		*/
 		//
-		/*-
+		// /*-
 		Stream<String> st = strings.stream()
 				.filter(string -> !string.isEmpty());
 		//
@@ -39,8 +39,8 @@ public class ApplStream {
 		// st = st.peek(x->System.out.println("++++"));
 		arr[1] = "0000";
 		st.forEach(System.out::println);
-		*/
-		// /*-
+		// */
+		/*-
 		Stream<String> st = strings.stream()
 				.filter(string -> !string.isEmpty());
 		List<String> filtered = st.map(str->"_"+str+"_")
@@ -51,6 +51,6 @@ public class ApplStream {
 				.filter(string -> !string.isEmpty())
 				.map(str->"*"+str+"*")
 				.forEach(s-> System.out.print(s + ", "));
-		// */
+		*/
 	}
 }
