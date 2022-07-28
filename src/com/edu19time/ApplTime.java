@@ -29,14 +29,14 @@ public class ApplTime {
 		Date date = new Date(currentTime);
 		System.out.println(date); 
 		*/
-		// /*-
+		/*-
         LocalDateTime currentDateTime = LocalDateTime.now();
 		System.out.println("Current LocalDateTime: " + currentDateTime);
 		LocalDate currentDate = LocalDate.now();
 		System.out.println("Current LocalDate: " + currentDate);
 		LocalTime currentTime = LocalTime.now();
 		System.out.println("Current LocalTime: " + currentTime);
-		// */
+		*/
 		/*-
 		LocalDateTime currentDateTime = LocalDateTime.now();
 		LocalDate date1 = currentDateTime.toLocalDate();
@@ -45,12 +45,13 @@ public class ApplTime {
 		int day = currentDateTime.getDayOfMonth();
 		int seconds = currentDateTime.getSecond();
 		System.out.println("Month: " + month + "  day: " + day + "  seconds: " + seconds);
+		System.out.println("Month.of(month) = " + Month.of(1));
 		*/
 		/*-
 		LocalDate currentDate = LocalDate.now();
 		LocalDate date2 = currentDate
-				.withDayOfMonth(10)
-				.withMonth(4)
+				//.withDayOfMonth(10)
+				//.withMonth(4)
 				.withYear(2012);
 		System.out.println("with... date2: " + date2);
 		//
@@ -115,7 +116,7 @@ public class ApplTime {
 		Duration duration = Duration.between(time2, time1);
 		System.out.println("duration = " + duration);
 		*/
-        /*-
+        // /*-
         LocalDate ofEpochDay = LocalDate.ofEpochDay(0L); // 01.01.1970
         System.out.println("ofEpochDay = " + ofEpochDay);
         //
@@ -139,8 +140,8 @@ public class ApplTime {
         LocalDateTime localDate = new Date(System.currentTimeMillis()).toInstant().atZone(ZoneId.systemDefault())
                 .toLocalDateTime();
         // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy 'at' hh:mm");
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss.SSS dd.MM.yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss.SSS dd.MM.yyyy"); // https://en.wikipedia.org/wiki/ISO_8601
         System.out.println("localDate.format(formatter): " + localDate.format(formatter));
-        */
+        // */
     }
 }
