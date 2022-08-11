@@ -26,13 +26,18 @@ public final class ApplDB {
 	private static String URL = "jdbc:mysql://192.168.198.128:3306/lv696";
 	*/
 	//
+	private static String username = "";
+	private static String password = "";
+	private static String URL = "jdbc:h2:mem:test";
+	//
+	/*
 	private static String username = "postgres";
 	private static String password = "root";
 	//private static String URL = "jdbc:postgresql://localhost:5432/";
 	private static String URL = "jdbc:postgresql://localhost:5432/javamvn";
-	//
+	*/
 
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) throws SQLException, InterruptedException {
 		System.out.println("Start...");
 		//DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 		//DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
@@ -50,7 +55,7 @@ public final class ApplDB {
 		*/
 		//
 		// /* Create Table
-		//st.execute("USE lv696;");
+		//st.execute("USE javamvn;");
 		//
 		// MySQL
 //		String query = "CREATE TABLE temp "
@@ -81,27 +86,30 @@ public final class ApplDB {
 		st.execute(query);
 		// */
 		//
-		/* Insert Data
+		// /* Insert Data
 		//
 		// MySQL
 		//String query = "INSERT INTO temp (name,login,password,age) VALUES ('Ivan','iva','qwerty',21);";
 		//String query = "INSERT INTO temp (name,login,password,age) VALUES ('Petro4','pet3','1234562',22);";
 		//
 		// PostGreSQL
-		String query = "INSERT INTO temp (id,name,login,password,age) VALUES (2,'Ivan','iva','qwerty',21);";
+		//String query = "INSERT INTO temp (id,name,login,password,age) VALUES (2,'Ivan','iva','qwerty',21);";
 		//String query = "INSERT INTO temp (id,name,login,password,age) VALUES (1,'Petro','pet','123456',22);";
+		 query = "INSERT INTO temp (id,name,login,password,age) VALUES (3,'Stepan3','step','123456',23);";
 		//
-		//con.setAutoCommit(false);
+		//on.setAutoCommit(false);
 		st.execute(query);
 		//con.commit();
+		//System.out.println("transaction rollback ...");
+		//Thread.sleep(2000);
 		//con.rollback();
-		*/
+		// */
 		//
-		/* Update Data
+		// /* Update Data
 		//
 		//st.executeUpdate("UPDATE temp SET name='Ira' WHERE id=1;");
-		st.execute("UPDATE temp SET name='Tolik' WHERE login LIKE 'p%';");
-		*/
+		//st.execute("UPDATE temp SET name='Tolik' WHERE login LIKE 'st%';");
+		// */
 		//
 		/* Delete Data
 		//
@@ -110,17 +118,17 @@ public final class ApplDB {
 		System.out.println("res = " + res);
 		*/
 		//
-		/* Read Data
+		// /* Read Data
 		//
 		//st.execute("USE lv696;");
-		//ResultSet rs = st.executeQuery("select * from temp;");
+		ResultSet rs = st.executeQuery("select * from temp;");
 		//
-		ResultSet rs = null;
-		boolean res = st.execute("select * from temp;");
-		System.out.println("res = " + res);
-		if (res) {
-			rs = st.getResultSet();
-		}
+//		ResultSet rs = null;
+//		boolean res = st.execute("select * from temp;");
+//		System.out.println("res = " + res);
+//		if (res) {
+//			rs = st.getResultSet();
+//		}
 		//
 		int columnCount = rs.getMetaData().getColumnCount();
 		// Resultset.getMetaData() get the information
@@ -142,7 +150,7 @@ public final class ApplDB {
 		}
 		//
 		//con.commit(); // Close transaction
-		*/
+		// */
 		if (st != null) {
 			st.close();
 		}
