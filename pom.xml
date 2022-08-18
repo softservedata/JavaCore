@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.edu</groupId>
-  <artifactId>javamvn</artifactId>
+  <artifactId>javaioc</artifactId>
   <version>1.0</version>
 
   <packaging>jar</packaging>
@@ -91,6 +91,14 @@
       <scope>provided</scope>
     </dependency>
 
+<!-- - - - - - Spring - - - - - -->
+<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.22</version>
+            <!--            <version>5.2.7.RELEASE</version>-->
+        </dependency>
+
   </dependencies>
 
   <build>
@@ -162,7 +170,6 @@
 
     </plugins>
   </build>
-
 
 
 </project>
