@@ -4,10 +4,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.edu</groupId>
-  <artifactId>javamvn</artifactId>
+  <artifactId>javaweb</artifactId>
   <version>1.0</version>
 
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <name>${project.artifactId}</name>
   <url>http://maven.apache.org</url>
