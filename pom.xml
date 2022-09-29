@@ -55,11 +55,11 @@
 
         <!-- - - - - - DB - - - - - -->
 
-<!--        <dependency>-->
-<!--            <groupId>org.postgresql</groupId>-->
-<!--            <artifactId>postgresql</artifactId>-->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
 <!--            <version>42.5.0</version>-->
-<!--        </dependency>-->
+        </dependency>
 
         <!-- - - - - - Spring - - - - - -->
         <dependency>
@@ -71,17 +71,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
-<!--
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-
+<!--
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-
+-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -93,13 +93,13 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
+<!--
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
-
+-->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
@@ -128,7 +128,7 @@
             <artifactId>jjwt</artifactId>
             <version>0.9.1</version>
         </dependency>
--->
+
     </dependencies>
 
     <build>
@@ -182,7 +182,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <mainClass>com.softserve.edu.Application</mainClass>
+                    <mainClass>com.edu.Application</mainClass>
                 </configuration>
             </plugin>
 
