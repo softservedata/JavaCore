@@ -16,7 +16,7 @@ public class MainController {
      *
      * @return index page of frontend
      */
-    @GetMapping("/")
+    @GetMapping({"/", "/index"})
     public String index() {
         return "index.html";
     }

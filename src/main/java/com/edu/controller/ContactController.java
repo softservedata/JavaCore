@@ -1,6 +1,7 @@
 package com.edu.controller;
 
 import com.edu.dto.ContactDto;
+import com.edu.dto.ResultDto;
 import com.edu.service.ContactService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,25 +21,26 @@ public class ContactController {
         this.contactService = contactService;
     }
 
-    @GetMapping({"/contacts", "/index"})
+    //@GetMapping({"/contacts", "/index"})
+    @GetMapping("/contacts")
     public List<ContactDto> listContacts() {
         return contactService.listContact();
     }
 
     @PostMapping(value = "/contacts")
-    public String addContact(
+    public ContactDto addContact(
             @Valid
             @RequestBody
             ContactDto contactDto) {
-        contactService.addContact(contactDto);
-        return ""; // TODO
+        System.out.println("***contactDto = " + contactDto);
+        return contactService.addContact(contactDto);
     }
 
     @DeleteMapping("/contacts/{contactId}")
-    public String deleteContact(
+    public ResultDto deleteContact(
             @PathVariable("contactId")
             Integer contactId) {
         contactService.removeContact(contactId);
-        return ""; // TODO
+        return new ResultDto(true);
     }
 }

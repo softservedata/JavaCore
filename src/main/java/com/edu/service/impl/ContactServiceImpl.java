@@ -22,7 +22,7 @@ public class ContactServiceImpl implements ContactService {
     }
 
     @Transactional
-    public void addContact(ContactDto contactDto) {
+    public ContactDto addContact(ContactDto contactDto) {
         Contact contact = Contact.builder()
                 //.id(contactDto.getId())
                 .firstname(contactDto.getFirstname())
@@ -30,7 +30,10 @@ public class ContactServiceImpl implements ContactService {
                 .email(contactDto.getEmail())
                 .telephone(contactDto.getTelephone())
                 .build();
-        contactRepository.save(contact);
+        System.out.println("\t*** contact = " + contact);
+        contact = contactRepository.save(contact);
+        contactDto.setId(contact.getId());
+        return contactDto;
     }
 
     @Transactional
