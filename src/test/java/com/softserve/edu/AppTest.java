@@ -1,7 +1,10 @@
-package com.edu;
+package com.softserve.edu;
 
 import org.junit.jupiter.api.*;
 
+/**
+ * Unit test for simple App.
+ */
 public class AppTest {
 
     @BeforeAll
@@ -31,12 +34,6 @@ public class AppTest {
     }
 
     @Test
-    public void testTwo() {
-        System.out.println("\t\t@Test testTwo()");
-        Assertions.assertEquals(6, 2 + 4);
-    }
-
-    @Test
     public void testApp() {
         // From Maven
         System.out.println("***surefire.java.version = " + System.getProperty("surefire.application.password"));
@@ -45,6 +42,7 @@ public class AppTest {
         System.out.println("***System.getenv(\"DEFAULT_PASS\") = " + System.getenv("DEFAULT_PASS"));
         // From Eclipse/Idea
         System.out.println("***System.getenv().MY_IDE = " + System.getenv().get("MY_IDE"));
+        //
+        Assertions.assertEquals(9, 4 + 5);
     }
-
 }

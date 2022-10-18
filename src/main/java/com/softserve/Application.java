@@ -1,4 +1,4 @@
-package com.edu;
+package com.softserve;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +13,7 @@ public class Application extends SpringBootServletInitializer {
     }
 
     public static void main(String[] args) {
+        System.out.println("***Start");
         SpringApplication.run(Application.class, args);
     }
 }
