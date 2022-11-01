@@ -50,6 +50,24 @@
         <version>19</version>
       </dependency>
 
+        <!-- - - - - - Okhttp rest request - - - - - -->
+
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.10.0</version>
+        </dependency>
+
+
+        <!-- - - - - - Gson create JSON Objects - - - - - -->
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

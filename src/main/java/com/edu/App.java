@@ -235,6 +235,8 @@ public class App extends Application {
         Button sendRightButton = new Button(">");
         sendRightButton.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
+                //System.out.println("event = " + ((Button)event.getSource()).getText() );
+                System.out.println("event = " + ((Button)event.getSource()).getText() );
                 String item = leftListView.getSelectionModel().getSelectedItem();
                 if (item != null) {
                     leftListView.getSelectionModel().clearSelection();
