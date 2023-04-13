@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.edu</groupId>
-    <artifactId>javareflec</artifactId>
+    <artifactId>gc</artifactId>
     <version>1.0</version>
 
     <packaging>jar</packaging>
@@ -17,83 +17,19 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- - - - - - Java - - - - - -->
         <java.version>1.8</java.version>
-        <!-- - - - - - Reports - - - - - -->
-        <testng.reports.directory>./target/surefire-reports/test-output</testng.reports.directory>
-        <!-- - - - - - Password - - - - - -->
-        <application.password>null123</application.password>
+<!--        <java.version>17</java.version>-->
     </properties>
 
 
     <dependencies>
 
         <!-- - - - - - Test - - - - - -->
-        <!--
-        <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <version>4.13.2</version>
-          <scope>test</scope>
-        </dependency>
-        -->
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.8.2</version>
+            <version>5.9.1</version>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>5.8.2</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- - - - - - DB - - - - - -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.29</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.4.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>2.1.212</version>
-            <!-- <scope>test</scope> -->
-        </dependency>
-
-        <!-- - - - Logger - - - -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.36</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.36</version>
-            <scope>runtime</scope>
-        </dependency>
-
-        <!-- - - - - - Web - - - - - -->
-        <!--
-        <dependency>
-          <groupId>javax.servlet</groupId>
-          <artifactId>javax.servlet-api</artifactId>
-          <version>4.0.1</version>
-          <scope>provided</scope>
-        </dependency>
-        -->
 
     </dependencies>
 
@@ -127,44 +63,34 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
+                    <argLine>-Xms512m -Xmx1024m</argLine>
+                    <skipTests>false</skipTests>
                     <includes>
                         <include>**/*.java</include>
-                        <!--                        <include>**/edu09/*.java</include>-->
                     </includes>
-                    <systemPropertyVariables>
-                        <surefire.application.password>
-                            ${application.password}
-                        </surefire.application.password>
-                    </systemPropertyVariables>
-                    <!--          <reportsDirectory>${testng.reports.directory}</reportsDirectory>-->
-                    <!--          <suiteXmlFiles>-->
-                    <!--            <suiteXmlFile>testng.xml</suiteXmlFile>-->
-                    <!-- <suiteXmlFile>testng2.xml</suiteXmlFile> -->
-                    <!-- <suiteXmlFile>testng.xml</suiteXmlFile> -->
-                    <!--            <suiteXmlFile>testng03par.xml</suiteXmlFile>-->
-                    <!--          </suiteXmlFiles>-->
                 </configuration>
             </plugin>
-
-            <!--
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-war-plugin</artifactId>
-              <version>3.3.2</version>
-              <configuration>
-                <failOnMissingWebXml>false</failOnMissingWebXml>
-              </configuration>
-            </plugin>
-            -->
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.1.0</version>
                 <configuration>
-                    <mainClass>com.softserve.edu.App</mainClass>
+                    <executable>java</executable>
+                    <arguments>
+                        <argument>-Xms512m</argument>
+                        <argument>-Xmx512m</argument>
+                        <argument>-XX:NewRatio=3</argument>
+                        <argument>-XX:+PrintGCTimeStamps</argument>
+                        <argument>-XX:+PrintGCDetails</argument>
+                        <argument>-Xloggc:gc.log</argument>
+                        <argument>-classpath</argument>
+                        <classpath/>
+                        <argument>com.edu.AppSimple</argument>
+                    </arguments>
                 </configuration>
             </plugin>
+
 
         </plugins>
     </build>
