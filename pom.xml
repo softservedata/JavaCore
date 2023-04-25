@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.softserve.edu</groupId>
-    <artifactId>javaCorePro0</artifactId>
+    <artifactId>javaCoreMatrix</artifactId>
     <version>1.0</version>
 
     <packaging>jar</packaging>
@@ -13,27 +13,56 @@
     <name>${project.artifactId}</name>
     <url>http://maven.apache.org</url>
 
-    <parent>
-        <groupId>com.softserve.edu</groupId>
-        <artifactId>javaCorePro3</artifactId>
-        <version>1.0</version>
-    </parent>
+    <properties>
+        <!-- - - - - - Encoding - - - - - -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- - - - - - Java - - - - - -->
+        <java.version>1.8</java.version>
+        <testng.reports.directory>./target/surefire-reports/test-output</testng.reports.directory>
+    </properties>
 
     <dependencies>
 
         <!-- - - - - - Test - - - - - -->
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <!-- <version>${org.testng.version}</version> -->
-            <version>7.4.0</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.9.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>5.9.1</version>
             <scope>test</scope>
         </dependency>
 
     </dependencies>
 
     <build>
+        <finalName>${project.artifactId}</finalName>
+
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -42,17 +71,9 @@
                 <configuration>
                     <argLine>-Xms512m -Xmx1024m</argLine>
                     <skipTests>false</skipTests>
-                    <!-- <runOrder>reversealphabetical</runOrder> -->
-                    <!-- <argLine>${surefireArgLine}</argLine> -->
-                    <systemPropertyVariables>
-                        <surefire.reports.directory>
-                            ${testng.reports.directory}
-                        </surefire.reports.directory>
-                    </systemPropertyVariables>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                    <reportsDirectory>${testng.reports.directory}</reportsDirectory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
                 </configuration>
             </plugin>
 
