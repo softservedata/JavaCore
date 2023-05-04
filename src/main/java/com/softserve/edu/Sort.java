@@ -56,4 +56,20 @@ public class Sort {
         }
     }
 
+    public void bubble(Stud[] studs, Comparator<Stud> comparator, int[] index) {
+        boolean isContinue = true;
+        int temp = -1;
+        for (int i = 0; isContinue && i < studs.length - 1; i++) {
+            isContinue = false;
+            for (int j = 0; j < studs.length - 1 - i; j++) {
+                if (comparator.compare(studs[index[j]], studs[index[j + 1]]) > 0) {
+                    temp = index[j];
+                    index[j] = index[j + 1];
+                    index[j + 1] = temp;
+                    isContinue = true;
+                }
+            }
+        }
+    }
+
 }

@@ -7,8 +7,9 @@ public class Appl {
         //matrix.printMatrix();
         //matrix.printVector();
         matrix.printSlr();
-        matrix.methodGaussa();
-        //matrix.printSlr();
+        //matrix.methodGaussa();
+        matrix.methodGaussaIndex();
+        matrix.printSlr();
         matrix.printVector();
         //
         System.out.println("done");
